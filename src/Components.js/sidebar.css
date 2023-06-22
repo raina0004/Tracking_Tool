@@ -1,0 +1,23 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar a {
+    margin-bottom: 10px;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .sidebar {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .sidebar a {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  

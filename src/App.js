@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Register from './Pages/Register';
+import Sidebar from './Components.js/Sidebar';
+import React, { useEffect, useState } from 'react';
+import Login from './Pages/Login';
+import User from './Pages/User';
+import CreateLead from './Pages/CreateLead';
+import AllUser from './Pages/AllUser.js';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Sidebar/>
+        <Routes>
+        <Route path="/" element={<Login />} /> :
+          <Route path="/Register" element={<Register />} />
+          <Route path="/User-Management" element={<User />} />
+          <Route path="/create-lead" element={<CreateLead />} />
+          <Route path="/allusers" element={<AllUser />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
